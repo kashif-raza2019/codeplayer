@@ -1,0 +1,79 @@
+<!Doctype>
+<html>
+ <head>
+  <title>Kashif's Web Project</title>
+  <link href='https://fonts.googleapis.com/css?family=Annie Use Your Telescope' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+  <link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
+  <script src="jquery-ui/external/jquery/jquery.js"></script>
+  <script src="jquery-ui/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="codeplayer.css">
+ </head>
+ <body>
+  <div id="logo">
+     <h4>Kashif's Web Player Arena</h4>
+	 </div>
+  <div id="header">
+
+    <div id="buttoncontainer">
+	 <div class="togglebutton active" id="html">HTML</div>
+	 <div class="togglebutton" id="css">CSS</div>
+	 <div class="togglebutton" id="javascript">JAVASCRIPT</div>
+	 <div class="togglebutton active" id="output">OUTPUT</div>
+    </div>
+  </div>
+  <div id="bodycontainer">
+     <textarea id="htmlpanel" class="panel"><p>Hi! How're Doing?</p></textarea>
+	 <textarea id="csspanel" class="panel hidden">
+	    p{
+        font-size: 1.6em;
+        color: blue;
+        font-family: Courier, sans-serif;
+        background-image: linear-gradient(-30deg, white, #87ceeb);
+      }
+	 </textarea>
+	 <textarea id="javascriptpanel" class="panel hidden">alert("A Warm regards from Kashif!")</textarea>
+	 <iframe id="outputpanel" class="panel"></iframe>
+
+  </div>
+ <script type="text/javascript">
+     function updateoutput(){
+	  $("iframe").contents().find("html").html("<html><head><style type='text/css'>" + $("#csspanel").val() + "</style></head><body>" + $("#htmlpanel").val() + "</body></html>");
+
+	   document.getElementById("outputpanel").contentWindow.eval($("#javascriptpanel").val());
+
+
+	 }
+
+
+   $(".togglebutton").hover(function(){
+     $(this).addClass("highlightedbutton");
+   }, function(){
+    $(this).removeClass("highlightedbutton");
+
+   })
+
+   $(".togglebutton").click(function(){
+    $(this).toggleClass("active");
+	$(this).removeClass("highlightedbutton");
+    var panelid = $(this).attr("id") + "panel";
+    $("#" + panelid).toggleClass("hidden");
+	var numberofactivepanels = 4 - $(".hidden").length;
+    $(".panel").width(($(window).width()/numberofactivepanels) - 12);
+   });
+
+
+   $(".panel").height($(window).height()-$("#header").height()-$("#logo").height());
+     updateoutput();
+   //Event immediate Changer!
+   $("textarea").on('change keyup paste', function(){
+      //To change the html process
+     updateoutput();
+
+   });
+
+
+ </script>
+ </body>
+
+</html>

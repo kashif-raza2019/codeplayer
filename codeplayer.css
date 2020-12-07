@@ -1,0 +1,88 @@
+ #header{
+	 background-color: #ededed;
+	 font-family: Annie Use Your Telescope, sans-serif;
+	 font-size: 22px;
+	 width: 100%;
+     padding: 5px;
+	 height: 45px;
+	 border-radius: 3px;
+	}
+	#logo{
+	 width: 99%;
+	 height: 30px;
+	 text-align: center;
+	 margin: 8px;
+	 margin-bottom: 14px;
+	 font-family: Sofia, Courier;
+	 font-weight: bold;
+	 font-size: 28px;
+
+	}
+    #buttoncontainer{
+     width: 318px;
+	 margin: 0 auto;
+     }
+	 .togglebutton{
+	  float: left;
+	  margins: 10px;
+	  font-size: 24px;
+	  font-weight: bold;
+	  padding-right: 10px;
+	  padding-left: 10px;
+	  border: 1px solid gray;
+	  border-right: none;
+
+	 }
+	 #html{
+	  border-top-left-radius: 6px;
+	  border-bottom-left-radius: 6px;
+	 }
+	 #output{
+	  border-top-right-radius: 6px;
+	  border-bottom-right-radius: 6px;
+	  border-right: 1px solid gray;
+	 }
+	 .active{
+	  background-color: #00e5ff;
+	 }
+	 .highlightedbutton{
+	  background-color: gray;
+	 }
+	 textarea{
+	  width: 50%;
+	  height: 100%;
+	  resize: none;
+	  border-top: none;
+	  border-color: gray;
+	 }
+
+	 .hidden{
+	  display: none;
+	 }
+	 .panel{
+	  float: left;
+	  width: 49.6%;
+	  border-left: none;
+	 }
+   textarea{
+     background-color: #142136;
+   }
+   #htmlpanel{
+     color: #F60C46;
+     font-size: 1.4em;
+   }
+   #csspanel{
+     color: #97F700;
+     font-size: 1.4em;
+   }
+   #javascriptpanel{
+     color: #F78520;
+     font-size: 1.4em;
+   }
+	 iframe{
+	  border: none;
+	 }
+	body{
+	 margin: 0px;
+     padding: 0px;
+	}
